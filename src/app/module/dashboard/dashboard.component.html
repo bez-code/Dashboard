@@ -1,20 +1,28 @@
 <div>
     <app-widget-area></app-widget-area>
 </div>
-
+<br>
 <mat-divider></mat-divider>
-
-<div>
-    <div>line chart</div>
-    <div>line chart</div>
-    <div>line chart</div>
-    <div>line chart</div>
+<br>
+<div fxLayout="row" fxLayoutAlign="space-between " fxLayoutGap="20px" class="stats-cards">
+    <mat-card fxFlex="25">
+        <app-widget-card label="Users" total="180" percentage="20%"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="New User" total="20" percentage="5%"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="Users Retentation" total="40" percentage="35%"></app-widget-card>
+    </mat-card>
+    <mat-card fxFlex="25">
+        <app-widget-card label="Users Inactive" total="70" percentage="15%"></app-widget-card>
+    </mat-card>
 </div>
-
+<br>
 <mat-divider></mat-divider>
-
+<br>
 <div>
     <div>Table</div>
     <div>pie chart</div>
-   
+
 </div>

@@ -12,5 +12,6 @@ export class HeaderComponent {
 
   toggleSidebar(){
     this.toggleSideBarForMe.emit();
+    
   }
 }

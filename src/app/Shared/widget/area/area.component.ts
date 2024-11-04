@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
 @Component({
   selector: 'app-widget-area',
   templateUrl: './area.component.html',
@@ -37,11 +38,10 @@ export class AreaComponent implements OnInit {
           '2024 the US has 3,708 weapons compared to Russia’s 4,380.'
       },
       title: {
-        text: 'US and USSR nuclear stockpiles'
+        text: 'Random Data'
       },
       subtitle: {
-        text: 'Source: <a href="https://fas.org/issues/nuclear-weapons/status-world-nuclear-forces/" ' +
-          'target="_blank">FAS</a>'
+        text: 'Demo'
       },
       xAxis: {
         allowDecimals: false,
@@ -49,29 +49,15 @@ export class AreaComponent implements OnInit {
           rangeDescription: 'Range: 1940 to 2024.'
         }
       },
-      yAxis: {
-        title: {
-          text: 'Nuclear weapon states'
-        }
-      },
       tooltip: {
         pointFormat: '{series.name} had stockpiled <b>{point.y:,.0f}</b><br/>' +
           'warheads in {point.x}'
       },
-      plotOptions: {
-        area: {
-          pointStart: 1940,
-          marker: {
-            enabled: false,
-            symbol: 'circle',
-            radius: 2,
-            states: {
-              hover: {
-                enabled: true
-              }
-            }
-          }
-        }
+      Credits: {
+        embeled: false
+      },
+      Exporting: {
+        embeled: true
       },
       series: [{
         name: 'USA',
@@ -101,8 +87,14 @@ export class AreaComponent implements OnInit {
         ]
       }]
 
-    }
+    },
+      HC_exporting(Highcharts);
 
+    setTimeout(() => {
+      window.dispatchEvent(
+        new Event('resize')
+      );
+    }, 300)
 
   }
 }
